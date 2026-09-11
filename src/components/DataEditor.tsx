@@ -63,7 +63,6 @@ function Buttons() {
 
     return (
         <div className='editor' id='buttons'>
-            <button>Refresh Table</button>
             <button type="submit">Submit</button>
         </div>
     )

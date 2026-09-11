@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Person }  from './Interfaces'
+import type { Person } from './Interfaces'
 
 //functions to add data to the table
 function FetchMockData() {
@@ -27,22 +27,22 @@ function FetchMockData() {
     }, []);
 
     const dataTable = persons ? (
-                <>
-                    {persons.map(entry => (
-                        <tr key={entry.id}>
-                            <td>{entry.id}</td>
-                            <td>{entry.lastName}</td>
-                            <td>{entry.firstName}</td>
-                            <td>{entry.age}</td>
-                        </tr>
-                    ))}
-                </>
-            ) : (
-                <tr>
-                    <td>Loading...</td>
+        <>
+            {persons.map(entry => (
+                <tr key={entry.id}>
+                    <td>{entry.id}</td>
+                    <td>{entry.lastName}</td>
+                    <td>{entry.firstName}</td>
+                    <td>{entry.age}</td>
                 </tr>
-            );
-            
+            ))}
+        </>
+    ) : (
+        <tr>
+            <td>Loading...</td>
+        </tr>
+    );
+
     //format data into a table
     return (
         <>
@@ -69,21 +69,30 @@ function StaticMockData() {
     }, []);
 }*/
 
+function RefreshButton() {
+    return (
+        <button>Refresh Table</button>
+    )
+}
+
 export default function DataTable() {
 
     return (
-        <table className="DataTable">
-            <thead className="DataHeader">
-                <tr>
-                    <th>ID</th>
-                    <th>Last Name</th>
-                    <th>First Name</th>
-                    <th>Age</th>
-                </tr>
-            </thead>
-            <tbody>
-                <FetchMockData />
-            </tbody>
-        </table>
+        <>
+            <RefreshButton />
+            <table className="DataTable">
+                <thead className="DataHeader">
+                    <tr>
+                        <th>ID</th>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <FetchMockData />
+                </tbody>
+            </table>
+        </>
     );
 }
