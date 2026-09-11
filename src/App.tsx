@@ -9,10 +9,10 @@ export default function App() {
             <div className='Title'>
                 <h1>ImProto</h1>
             </div>
-            <div className="DataInputContainer">
+            <div className="InputContainer">
                 <DataEditor />
             </div>
-            <div className="DataTableBacking">
+            <div className="TableContainer">
                 <DataTable />
             </div>
         </>
